@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code</title>
+    <link rel="stylesheet" href="./css/qr.css">
+    <script src="/src/qrcode.min.js"></script> <!-- Carrega a biblioteca localmente -->
+    <script src="/src/qrcode.url.js"></script>  <!-- Carrega o script de parâmetros da url -->
+</head>
+<body>
+    <div class="qr-container">
+    <div id="qrcode"></div>
+</div>
+    <div id="info-display">
+        <h2>Informações do Pallet</h2>
+        <div>
+            <span>Material: <span id="span-desc"></span></span>
+        </div>
+        <div>
+            <span>Quantidade: <span id="span-qtd"></span></span>
+        </div>
+        <div>
+            <span>Código do material: <span id="span-code"></span></span>
+        </div>
+
+ 
+</body>
+</html>
+
