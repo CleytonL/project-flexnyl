@@ -78,7 +78,7 @@ span {
 /* Estilos para tablets */
 @media only screen and (max-width: 768px) {
     #info-display {
-        width: 90%;
+        width: 60%;
     }
 }
 
@@ -90,8 +90,8 @@ span {
         border: none;
     }
     #info-display {
-        width: 80%;
-        height: 10%;
+        width: 60%;
+        height: 40%;
         padding: 10px;
         page-break-inside: avoid;
     }
