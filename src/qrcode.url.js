@@ -14,8 +14,8 @@ console.log('Dados recebidos:', code,quantidade,desc); // Verifica se os dados e
 document.addEventListener("DOMContentLoaded", function() {
     var qrcode = new QRCode(document.getElementById('qrcode'), {
         text: code,
-        width: 250,
-        height: 250
+        width: 100,
+        height: 100
     });
      // Exibe as informações nos spans
     document.getElementById('span-code').textContent = code;

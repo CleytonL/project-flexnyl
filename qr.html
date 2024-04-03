@@ -10,7 +10,6 @@
 </head>
 <body>
     <div class="qr-container">
-    <div id="qrcode"></div>
 </div>
     <div id="info-display">
         <h2>Informações do Pallet</h2>
@@ -20,8 +19,10 @@
         <div>
             <span>Quantidade: <span id="span-qtd"></span></span>
         </div>
-        <div>
-            <span>Código do material: <span id="span-code"></span></span>
+        <div id="span-code-container">
+            <div class="inferior"><span class=span-flex>Código do material: <span id="span-code"></span></span></div>
+            
+            <div id="qrcode"></div>
         </div>
 
  

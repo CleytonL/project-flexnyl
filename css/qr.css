@@ -3,50 +3,75 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-.qr-container {
     display: flex;
     justify-content: center;
-}
-#qrcode {
-    width: 250px;
-    height: 250px;
-    border: 1px solid #333333;
-    margin-top: 10px;
+    align-items: center;
+    height: 100vh;
 }
 #info-display {
     text-align: center;
     width: 100%;
-    max-width: 600px;
-    margin: 20px auto;
+    height: 100vh; /* Defina a altura como 100% da altura da viewport */
+    margin: 0 auto; /* Centralize horizontalmente */
     background-color: #ffffff;
-    padding: 20px;
     border-radius: 8px;
-   border: 5px solid #333;
+    border: 7px solid #000;
+    position: relative; /* Adicione posicionamento relativo */
+    overflow: hidden; /* Oculta o conteúdo que ultrapassa a altura */
+    box-sizing: border-box; /* Inclui as bordas e preenchimento na altura total */
 }
+
+#qrcode {
+    border: 1px solid #333333;
+    margin-top: 5px;
+    position: absolute; /* Adiciona posicionamento absoluto */
+    top: 10px; /* Posiciona o QR code no topo */
+    right: 10px; /* Posiciona o QR code à direita */
+}
+
 h2 {
-    color: #333;
-    font-size: 30px;
+    margin: 0;
+    color: #000;
+    border-bottom: 2px solid #000;
+    padding: 40px;
+    font-size: 40px;
     text-transform: uppercase;
     text-align: center;
 }
 
-#span-code, #span-qtd, #span-desc {
+
+#span-qtd,
+#span-desc {
     font-weight: bold;
     text-transform: uppercase;
-    font-size: 30px;
-    color: #20ad41;
-    border-bottom: 1px solid #333;
+    color: #000;
+    border-bottom: 5px solid #000;
+    font-size: 180px;
 }
 
-#span-qtd, #span-desc{
-    font-size: 45px;
+
+#span-code{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.span-flex{
+    display: flex;
+    font-size: 30px;
 }
 
 span {
     display: block;
-    font-size: 20px;
+    font-size: 40px;
     margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+
+.inferior {
+    display: inline-block;
+    padding: 10px;
+    text-align: center;
 }
 
 
@@ -59,7 +84,6 @@ span {
 
 /* Estilos para celulares */
 @media only screen and (max-width: 480px) {
-
     #qr-container {
         width: 150px;
         height: 150px;
@@ -70,5 +94,11 @@ span {
         height: 10%;
         padding: 10px;
         page-break-inside: avoid;
+    }
+}
+
+@media print {
+    #info-display {
+        max-width: 100%; /* Limitar a largura do info-display à largura da página */
     }
 }
