@@ -47,7 +47,6 @@ function toggleList2() {
     }
 }
 
-
 function copyItem(button) {
     // Obtém o valor do atributo data-text do botão
     var itemText = button.getAttribute("data-text");
@@ -66,4 +65,11 @@ function copyItem(button) {
     
     // Avisa o usuário que o texto foi copiado
     alert("Item copiado: " + itemText);
+}
+
+function limparConteudo() {
+    // Limpar os campos de entrada
+    document.getElementById("inputCode").value = "";
+    document.getElementById("inputQtd").value = "";
+    document.getElementById("inputDesc").value = "";
 }

@@ -4,9 +4,6 @@ body {
     font-family: "DM Sans", sans-serif;
 }
 
-/* Estilos para a lista de códigos */
-
-
 /* Botão para abrir a sidebar */
 .menu-btn {
     background-color: transparent;
@@ -16,21 +13,17 @@ body {
     position: fixed;
     top: 20px;
     left: 20px;
+ 
 }
 
 .menu-btn i {
-    font-size: 50px;
+    font-size: 30px; /* Reduz o tamanho do ícone para telas menores */
     color: #000; 
 }
 
-.hidden{
-    display: none;
-}
-
-
 /* Botão para fechar a sidebar */
 .close-btn {
-    background-color: #1a1a1a;
+    background-color: #e42525;
     padding: 5px;
     width: 100%;
     position: absolute;
@@ -42,21 +35,19 @@ body {
 }
 
 .close-btn i {
-    font-size: 40px;
+    font-size: 25px; /* Reduz o tamanho do ícone para telas menores */
     padding: 5px;
     color: #fff;
 }
 
 /* Menu sidebar */
 .sidebar {
-    height: 100vh;
-    width: 300px;
+    height: 100%;
+    width: 300px; /* Ajusta a largura da barra lateral para telas menores */
     position: fixed;
     top: 0;
     left: -300px; /* Inicialmente fora da tela */
     background-color: #20ad41;
-    border-right: 1px solid #000; /* Cor da borda */
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.9); /* Sombra */
     padding-top: 40px;
     transition: transform 0.6s ease; /* Adiciona transição para uma animação suave */
     z-index: 1;
@@ -69,41 +60,49 @@ body {
 
 .sidebar h1 {
     text-transform: uppercase;
-    background-color: rgba(0, 0, 0, 0.2);
-    font-size: 35px;
-    padding: 30px;
+    font-size: 25px; /* Reduz o tamanho da fonte para telas menores */
     color: #fff;
+    padding-top: 20px;
     text-align: center;
-}
-
-.sidebar h3{
-    font-size: 27px;
-    background-color: #1a1a1a;
-    border-bottom: 4px solid #fff;
-    color: #fff;
-    cursor: pointer;
-    text-align: left;
-    padding: 10px;
     margin: 0 auto;
 }
 
+.sidebar p{
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.sidebar h3{
+    font-size: 22px; /* Reduz o tamanho da fonte para telas menores */
+    background-color: rgba(0, 0, 0, 0.3);
+    border-left: 6px solid #205dad;
+    color: #fff;
+    cursor: pointer;
+    text-align: left;
+    padding: 15px;
+    margin-bottom: 1px;
+}
+
 .sidebar h3 i{
-    font-size: 40px;
+    font-size: 25px; /* Reduz o tamanho do ícone para telas menores */
     padding: 5px;
     margin-right: 15px;
 }
 
+/* Estilos para dispositivos maiores, como tablets e desktops */
 .sidebar ul {
     margin: 0 auto;
     height: 100%;
     overflow-y: auto; /* Adiciona uma barra de rolagem vertical quando necessário */
-    background-color: rgba(0, 0, 0, 0.5);
     display: none;
     list-style-type: none;
     padding: 15px;
 }
 
 .sidebar li {
+    overflow-y: auto;
     padding: 5px;
     text-align: center;
 }
@@ -111,29 +110,26 @@ body {
 .sidebar .item-content {
     display: flex;
     align-items: center;
-  
 }
 
 .sidebar .item-content span {
     text-transform: uppercase;
-    font-size: 25px;
-    border-bottom: 2px solid #346937;
-    background-color: rgba(0, 0, 0, 0.5);
+    font-size: 20px; /* Reduz o tamanho da fonte para telas menores */
+    border-left: 3px solid #fff;
+    background-color: #346937;
     color: #fff;
-    padding: 5px 5px;
+    padding: 10px;
     flex-grow: 1;
     margin-right: auto; /* Empurra o botão para a direita */
-    
 }
 
 .sidebar .item-content button {
     margin-left: 1px; /* Espaço entre o texto e o botão */
     background-color: #20ad41;
-    border-bottom: 3px solid #fff;
+    border: 1px solid #fff;
     border-radius: 4px;
     padding: 10px;
 }
-
 
 .btn-copy{
     background-color: transparent;
@@ -143,7 +139,7 @@ body {
 }
 
 .btn-copy i{
-    font-size: 20px;
+    font-size: 20px; /* Reduz o tamanho do ícone para telas menores */
     color: #fff;
 }
 
@@ -152,7 +148,7 @@ body {
 .content h1 {
     text-align: center;
     color: #20ad41;
-    font-size: 50px;
+    font-size: 40px; /* Reduz o tamanho da fonte para telas menores */
 }
 
 .content {
@@ -162,13 +158,14 @@ body {
 }
 
 .content.active {
-    margin-left: 300px; /* Move o conteúdo principal quando a barra lateral está ativa */
+    margin-left: 50%; /* Move o conteúdo principal quando a barra lateral está ativa */
 }
 
 #inputCode,
 #inputQtd,
 #inputDesc,
-.btn-qrcode {
+.btn-qrcode,
+.btn-limpar {
     display: block;
     margin: 10px auto;
     padding: 15px;
@@ -176,17 +173,17 @@ body {
     max-width: 300px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 25px;
+    font-size: 20px; /* Reduz o tamanho da fonte para telas menores */
 }
 
 .content ::placeholder{
-    font-size: 20px;
+    font-size: 18px; /* Reduz o tamanho do placeholder para telas menores */
 }
-
 
 input[type="text"],
 input[type="number"],
-.btn-qrcode {
+.btn-qrcode,
+.btn-limpar {
     box-sizing: border-box;
 }
 
@@ -195,4 +192,30 @@ input[type="number"],
     color: #fff;
     cursor: pointer;
     transition: 0.3s;
+    text-transform: uppercase;
 }
+
+.btn-limpar {
+    text-transform: uppercase;
+    background-color: #205dad;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+@media screen and (max-width: 768px) {
+    
+    .sidebar {
+        height: 100%;
+        width: 50%; 
+        left: -50%; 
+    }
+    
+    .sidebar.active {
+        transform: translateX(100%); /* Move a barra lateral para dentro da tela */
+    }
+    
+}
+
+
+

@@ -6,19 +6,15 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
 }
 #info-display {
     text-align: center;
     width: 100%;
-    height: 100vh; /* Defina a altura como 100% da altura da viewport */
+    height: 100%; /* Defina a altura como 100% da altura da viewport */
     margin: 0 auto; /* Centralize horizontalmente */
     background-color: #ffffff;
     border-radius: 8px;
-    border: 7px solid #000;
-    position: relative; /* Adicione posicionamento relativo */
-    overflow: hidden; /* Oculta o conteúdo que ultrapassa a altura */
-    box-sizing: border-box; /* Inclui as bordas e preenchimento na altura total */
+    border: 5px solid #000;
 }
 
 #qrcode {
@@ -33,7 +29,7 @@ h2 {
     margin: 0;
     color: #000;
     border-bottom: 2px solid #000;
-    padding: 40px;
+    padding: 38px;
     font-size: 40px;
     text-transform: uppercase;
     text-align: center;
@@ -45,60 +41,16 @@ h2 {
     font-weight: bold;
     text-transform: uppercase;
     color: #000;
-    border-bottom: 5px solid #000;
     font-size: 180px;
 }
 
-
-#span-code{
-    font-size: 30px;
-    font-weight: bold;
-}
-
-.span-flex{
-    display: flex;
-    font-size: 30px;
+#span-desc{
+    border-bottom: 5px solid #000;
 }
 
 span {
     display: block;
+    padding-bottom: 5px;
     font-size: 40px;
-    margin-bottom: 10px;
     text-transform: uppercase;
-}
-
-
-.inferior {
-    display: inline-block;
-    padding: 10px;
-    text-align: center;
-}
-
-
-/* Estilos para tablets */
-@media only screen and (max-width: 768px) {
-    #info-display {
-        width: 60%;
-    }
-}
-
-/* Estilos para celulares */
-@media only screen and (max-width: 480px) {
-    #qr-container {
-        width: 150px;
-        height: 150px;
-        border: none;
-    }
-    #info-display {
-        width: 60%;
-        height: 40%;
-        padding: 10px;
-        page-break-inside: avoid;
-    }
-}
-
-@media print {
-    #info-display {
-        max-width: 100%; /* Limitar a largura do info-display à largura da página */
-    }
 }

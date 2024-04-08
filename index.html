@@ -6,14 +6,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="./css/index.css">
     <script src="./src/gerarqrcode.js"></script>
-    <title>Gerador de QR Code</title>
+    <link rel="icon" href="https://static.wixstatic.com/media/9c9740_98e4c1b5c17c4d7a8435eb1353c63b9a~mv2.jpeg/v1/fill/w_137,h_62,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/flexnyl%20logo.jpeg">
+    <title>QR CODE - Caixas/Embalagens</title>
 </head>
 <body>
     <button class="menu-btn" id="menuBtn" onclick="toggleNavbar()"><i class="fas fa-bars"></i></button>
 
     <div id="sidebar" class="sidebar">
         <button class="close-btn" onclick="toggleNavbar()"><i class="fas fa-times"></i></button>
-    <h1>Códigos wms</h1>
+    <h1>Selecione o material</h1>
+    <p>(Copie e cole)</p>
     <h3 id="title" onclick="toggleList()"><i class="fas fa-box-open"></i>Caixas</h3>
     <ul id="sidebarList">
         <li>
@@ -152,6 +154,8 @@
     <input type="number" id="inputQtd"placeholder="Quantidade">
     <input type="text" id="inputDesc" placeholder="Descrição" maxlength="10">
     <button class="btn-qrcode" type="button" onclick="validarCampos()">Gerar QR Code</button>
+    <button class="btn-limpar" type="button" onclick="limparConteudo()">Limpar</button>
+
     </div>
 </body>
 </html>
