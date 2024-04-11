@@ -173,11 +173,11 @@ body {
     max-width: 300px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 20px; /* Reduz o tamanho da fonte para telas menores */
+    font-size: 20px; 
 }
 
 .content ::placeholder{
-    font-size: 18px; /* Reduz o tamanho do placeholder para telas menores */
+    font-size: 18px; 
 }
 
 input[type="text"],
@@ -212,10 +212,59 @@ input[type="number"],
     }
     
     .sidebar.active {
-        transform: translateX(100%); /* Move a barra lateral para dentro da tela */
+        transform: translateX(100%); 
+    }
+
+    .sidebar h3{
+        font-size: 20px;
+    }
+
+    .sidebar h3 i{
+        font-size: 20px;
     }
     
 }
+
+@media screen and (max-width: 400px) {
+    
+    .sidebar {
+        height: 100%;
+        width: 50%; 
+        left: -50%; 
+    }
+    
+    .sidebar.active {
+        transform: translateX(100%); /* Move a barra lateral para dentro da tela */
+    }
+
+    .sidebar h3{
+        font-size: 15px;
+    }
+
+    .sidebar h3 i{
+        font-size: 22px;
+    }
+
+    .sidebar h1{
+        font-size: 20px;
+    }
+
+    .sidebar p{
+        font-size: 15px;
+    }
+    
+    .sidebar .item-content span{
+        font-size: 15px;
+    }
+
+    .btn-qrcode,
+    .btn-limpar{
+        font-size: 15px;
+    }
+}
+
+
+
 
 
 
