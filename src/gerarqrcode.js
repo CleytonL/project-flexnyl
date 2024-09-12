@@ -47,6 +47,49 @@ function toggleList2() {
     }
 }
 
+// Função para abrir o container suporte
+function toggleSupport() {
+    var support = document.getElementById("support");
+    var content = document.getElementById("content");
+
+    if (support.classList.contains('hidden')) {
+        support.classList.remove('hidden');
+        content.classList.add('hidden');
+    } else {
+        support.classList.add('hidden');
+        content.classList.remove('hidden');
+    }
+}
+
+document.getElementById('supportForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    fetch('/.netlify/functions/submit-form', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'Accept': 'application/json'
+        },
+        body: new URLSearchParams(new FormData(event.target)).toString()
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            document.getElementById('confirmationMessage').style.display = 'block';
+            document.getElementById('errorMessage').style.display = 'none';
+            event.target.reset();
+        } else {
+            document.getElementById('confirmationMessage').style.display = 'none';
+            document.getElementById('errorMessage').style.display = 'block';
+        }
+    })
+    .catch(error => {
+        document.getElementById('confirmationMessage').style.display = 'none';
+        document.getElementById('errorMessage').style.display = 'block';
+    });
+});
+
+
 function copyItem(button) {
     // Obtém o valor do atributo data-text do botão
     var itemText = button.getAttribute("data-text");
@@ -62,9 +105,15 @@ function copyItem(button) {
     
     // Remove o elemento de texto temporário
     document.body.removeChild(tempInput);
+
+     // Preenche automaticamente o input com o texto copiado
+    var inputField = document.getElementById("inputCode"); // Adapte o ID conforme necessário
+    if (inputField) {
+        inputField.value = itemText;
+    } else {
+        console.error('Campo de input não encontrado!');
+    }
     
-    // Avisa o usuário que o texto foi copiado
-    alert("Item copiado: " + itemText);
 }
 
 function limparConteudo() {

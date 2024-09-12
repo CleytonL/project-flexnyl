@@ -1,2 +1,4 @@
 .idea/
 venv/
+# Local Netlify folder
+.netlify
